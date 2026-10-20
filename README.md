@@ -17,7 +17,9 @@ Or paste this to Claude Code:
 Install the mermaid-ascii mod: read https://raw.githubusercontent.com/BukeLy/claude-mermaid-ascii/main/install.sh, then run `curl -fsSL https://raw.githubusercontent.com/BukeLy/claude-mermaid-ascii/main/install.sh | sh` and tell me what it printed.
 ```
 
-Then start a new Claude Code session and ask Claude for a Mermaid diagram.
+Then start a new Claude Code session (or run `/reload-plugins` in an open one) and
+ask Claude for a Mermaid diagram. Needs Claude Code 2.1.287 or later, where mods are
+on by default.
 
 The script installs [boxmaid](https://github.com/rickthegreatest/boxmaid) and
 [merman-cli](https://github.com/Latias94/merman) (pinned versions, SHA-256 checked)
