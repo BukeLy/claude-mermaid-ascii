@@ -62,6 +62,12 @@ Or paste this to Claude Code:
 Install the mermaid-ascii mod: read https://raw.githubusercontent.com/BukeLy/claude-mermaid-ascii/main/install.sh, then run `curl -fsSL https://raw.githubusercontent.com/BukeLy/claude-mermaid-ascii/main/install.sh | sh` and tell me what it printed.
 ```
 
+If `boxmaid` is already on your `PATH`, install only the mod, at the Claude Code prompt:
+
+```
+/plugin install mermaid-ascii --marketplace BukeLy/claude-mermaid-ascii
+```
+
 Then start a new Claude Code session (or run `/reload-plugins` in an open one) and
 ask Claude for a Mermaid diagram. Needs Claude Code 2.1.287 or later, where mods are
 on by default.
