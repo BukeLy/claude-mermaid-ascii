@@ -3,6 +3,49 @@
 A Claude Code mod that draws ```` ```mermaid ```` blocks in Claude's replies as
 Unicode box-drawing diagrams in the terminal.
 
+Claude writes:
+
+```text
+flowchart TD
+  A[mermaid block in a reply] --> B[boxmaid]
+  B -->|drawn| D[diagram in the terminal]
+  B -->|refused| C[merman-cli]
+  C -->|drawn| D
+  B -->|too wide| E[source kept]
+  C -->|failed| E
+```
+
+You see:
+
+```text
+         ┌──────────────────────────┐
+         │ mermaid block in a reply │
+         └─────────────┬────────────┘
+                       │
+                       ▼
+                  ┌─────────┐
+                  │ boxmaid │
+                  └────┬────┘
+                       │
+        ┌──────────────┴─┬─────────────┐
+        │                │             │
+      drawn           refused      too wide
+        │                ▼             │
+        │         ┌────────────┐       │
+        │         │ merman-cli │       │
+        │         └──────┬─────┘       │
+        │                │             │
+        │       ┌────────┴────────┐    │
+        │       │                 │    │
+        │     drawn            failed  │
+        │       │                 │    │
+        │       │                 │   ┌┘
+        ▼       ▼                 ▼   ▼
+┌─────────────────────────┐   ┌─────────────┐
+│ diagram in the terminal │   │ source kept │
+└─────────────────────────┘   └─────────────┘
+```
+
 ## Quick start
 
 macOS or Linux, in a shell:
