@@ -1,0 +1,8 @@
+{
+  "name": "mermaid-ascii",
+  "version": "0.1.0",
+  "description": "Draws ```mermaid blocks in Claude's replies as Unicode box-drawing diagrams in the terminal",
+  "author": { "name": "BukeLy" },
+  "homepage": "https://github.com/BukeLy/claude-mermaid-ascii",
+  "license": "MIT"
+}

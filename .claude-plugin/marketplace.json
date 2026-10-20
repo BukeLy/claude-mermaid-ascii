@@ -1,0 +1,6 @@
+{
+  "name": "bukely-mods",
+  "owner": { "name": "BukeLy" },
+  "metadata": { "description": "Claude Code mods by BukeLy" },
+  "plugins": [{ "name": "mermaid-ascii", "source": "./" }]
+}
