@@ -1,6 +1,6 @@
 # mermaid-ascii
 
-![The word mermaid drawn as a chain of Mermaid node shapes, flowing into the word ascii drawn as plain boxes, rendered by this mod in a terminal](assets/banner.png)
+![Inside a box titled terminal, the word mermaid spelled in Mermaid node shapes flows into the word ascii spelled in plain boxes](assets/banner.png)
 
 A Claude Code mod that draws ```` ```mermaid ```` blocks in Claude's replies as
 Unicode box-drawing diagrams in the terminal.
