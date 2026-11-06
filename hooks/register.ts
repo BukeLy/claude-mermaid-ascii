@@ -8,6 +8,8 @@ const WIDE =
 const MARGIN = 4
 // boxmaid's exit code when the diagram cannot be laid out within -w columns.
 const CANNOT_FIT = 3
+// What a run rejects with when the engine abandoned the render that started it.
+const ABORTED = Symbol('aborted')
 // boxmaid draws every kind and fits the width itself; merman-cli covers what it
 // refuses, such as an erDiagram with CJK entity names.
 const boxmaid = (columns: number) =>
@@ -63,12 +65,15 @@ export const register: Register = on => {
       const key = `${columns}\n${source}`
 
       if (!drawings.has(key)) {
-        drawings.set(key, render(source))
+        // A resume redraws the transcript and abandons renders mid-run; that is no failure.
+        drawings.set(key, render(source).catch(error => {
+          throw next.signal.aborted ? ABORTED : error
+        }))
       }
 
       const drawn = await drawings.get(key)!.catch(error => {
         drawings.delete(key)
-        $.ui.status(`mermaid-ascii: ${error}`)
+        if (error !== ABORTED) $.ui.status(`mermaid-ascii: ${error}`)
 
         return null
       })
